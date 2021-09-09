@@ -20,7 +20,7 @@ resource "aws_internet_gateway" "Work_IGW" {
 }
 # DEFINE A VPC
 resource "aws_vpc" "Work_VPC" {
-  cidr_block           = "10.0.0.0/24"
+  cidr_block           = "10.0.0.0/16"
   instance_tenancy     = "default"
   enable_dns_support   = "true"
   enable_dns_hostnames = "true"
@@ -87,16 +87,20 @@ resource "aws_security_group" "Work_Nagios_Security_Group" {
 }
 }
 # provisioner
-resource "aws_instance" "Nagios" {
+resource "aws_instance" "nagios" {
     ami = "ami-042e8287309f5df03"
     instance_type = "t2.micro"
     subnet_id = aws_subnet.Work_Public_Subnet.id
+    name = "Work_Nagios_Security_Group"
     key_name = "vockey2021"   
+    #key_name armazenada na máquina local diretório keys
 }
 # provisioner
 resource "aws_instance" "node_a" {
     ami = "ami-042e8287309f5df03"
     instance_type = "t2.micro"
     subnet_id = aws_subnet.Work_Public_Subnet.id
+    name = "Work_Nagios_Security_Group"
     key_name = "vockey2021"
+  #key_name armazenada na máquina local diretório keys
 }
