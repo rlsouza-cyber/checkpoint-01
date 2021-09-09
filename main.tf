@@ -93,7 +93,7 @@ resource "aws_instance" "nagios" {
     subnet_id = aws_subnet.Work_Public_Subnet.id
     name = "Work_Nagios_Security_Group"
     key_name = "vockey2021"   
-    #key_name armazenada na máquina local diretório keys
+    #key_name armazenada na máquina local diretório keys.
 }
 # provisioner
 resource "aws_instance" "node_a" {
@@ -102,5 +102,5 @@ resource "aws_instance" "node_a" {
     subnet_id = aws_subnet.Work_Public_Subnet.id
     name = "Work_Nagios_Security_Group"
     key_name = "vockey2021"
-  #key_name armazenada na máquina local diretório keys
+  #key_name armazenada na máquina local diretório keys.
 }
